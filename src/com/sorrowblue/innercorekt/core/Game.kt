@@ -1,4 +1,4 @@
-package com.sorrowblue.innercorekt
+package com.sorrowblue.innercorekt.core
 
 external object Game {
     /**

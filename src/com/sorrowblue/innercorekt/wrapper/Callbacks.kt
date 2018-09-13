@@ -1,6 +1,6 @@
 package com.sorrowblue.innercorekt.wrapper
 
-import com.sorrowblue.innercorekt.Callback
+import com.sorrowblue.innercorekt.core.Callback
 
 object Callbacks {
 	

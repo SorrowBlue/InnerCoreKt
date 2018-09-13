@@ -1,11 +1,13 @@
-package com.sorrowblue.innercorekt
+package com.sorrowblue.innercorekt.core
+
+import com.sorrowblue.innercorekt.wrapper.Items
 
 external object Item {
 	
 	/**
 	 * 指定された名前、テクスチャ、およびパラメータを使用して、以前に登録された文字列IDにアイテムを作成します。
 	 */
-	fun createFoodItem(nameID: String, name: String, texture: Items.Texture, params: Items.Params = definedExternally)
+	fun createItem(nameID: String, name: String, texture: Items.Texture, params: Items.Params = definedExternally)
 	
 	/**
 	 * 指定された名前、テクスチャ、およびパラメータを使用して、以前に登録された文字列IDに食用のアイテムを作成します。
@@ -55,7 +57,7 @@ external object Item {
 	/**
 	 * プロパティパラメータの類似
 	 */
-	fun setProperties(id: Int, Any?)
+	fun setProperties(id: Int, prop: Any?)
 	
 	/**
 	 * useAnimationパラメータのアナログ
@@ -86,6 +88,10 @@ external object Item {
 	 * このアイテムが存在するかどうかを返します。
 	 */
 	fun isValid(id: Int, data: Int): Boolean
-Item.isNativeItem（id） - このオブジェクトがMCPEオブジェクトであるかどうかを返します。modsではありません。
+
+	/**
+	 * このオブジェクトがMCPEオブジェクトであるかどうかを返します。modsではありません。
+	 */
+	fun isNativeItem(id: Int): Boolean
 
 }
