@@ -29,9 +29,32 @@ interface Coords {
 		val z: Int
 	}
 	
-	interface Relative {
+	interface Vec {
 		val x: Double
 		val y: Double
 		val z: Double
 	}
+}
+
+fun coordsOF(
+	x: Int, y: Int, z: Int, side: Int = 0,
+	relative: Relative = relativeOf(x, y, z),
+	vec: Vec = vecOf(x.toDouble(), y.toDouble(), z.toDouble())
+) = object : Coords {
+	override val x = x
+	override val y = y
+	override val z = z
+	override val side = side
+}
+
+fun relativeOf(x: Int, y: Int, z: Int) = object : Coords.Relative {
+	override val x = x
+	override val y = y
+	override val z = z
+}
+
+fun vecOf(x: Double, y: Double, z: Double) = object : Coords.Vec {
+	override val x: x
+	override val y: y
+	override val z: z
 }
